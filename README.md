@@ -2,6 +2,11 @@
 
 This site is ready to be published as a static website.
 
+## Publish it to Vercel
+
+1. Import this folder or its GitHub repository at [vercel.com](https://vercel.com), then deploy with the default settings.
+2. Vercel will serve `index.html` directly. No build command or output directory is needed.
+
 ## Publish it to a custom domain
 
 1. Create a GitHub repository and push this folder to the repository.

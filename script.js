@@ -2,7 +2,7 @@ const weddingDate = new Date('2026-08-29T10:00:00');
 const hero = document.querySelector('.hero');
 const calendarButton = document.getElementById('add-to-calendar');
 const calendarMessage = document.getElementById('calendar-message');
-const weddingInbox = 'your-wedding-email@example.com';
+const weddingInbox = 'owusubarbara30@gmail.com';
 
 function buildCalendarFile() {
   const start = '20260829T100000';
@@ -106,4 +106,25 @@ form?.addEventListener('submit', (event) => {
   }
 
   form.reset();
+});
+
+const messageForm = document.getElementById('message-form');
+const messageFormStatus = document.getElementById('message-form-status');
+
+messageForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(messageForm);
+  const name = formData.get('name')?.toString().trim() || 'Guest';
+  const messageType = formData.get('messageType')?.toString().trim() || 'Message';
+  const message = formData.get('message')?.toString().trim() || '';
+  const subject = encodeURIComponent(`${messageType} from ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\nType: ${messageType}\n\n${message}`);
+
+  window.location.href = `mailto:${weddingInbox}?subject=${subject}&body=${body}`;
+
+  if (messageFormStatus) {
+    messageFormStatus.textContent = `Thank you, ${name}. Your message is ready to send to the couple.`;
+  }
+
+  messageForm.reset();
 });

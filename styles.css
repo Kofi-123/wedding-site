@@ -269,6 +269,7 @@ h1 {
 .story-section,
 .details-section,
 .gallery-section,
+.gifts-section,
 .rsvp-section {
   padding: 5rem 1.5rem;
 }
@@ -276,7 +277,9 @@ h1 {
 .countdown-card,
 .story-card,
 .detail-card,
-.rsvp-form {
+.rsvp-form,
+.gift-option,
+.message-form {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 24px;
@@ -288,7 +291,9 @@ h1 {
 .countdown-card,
 .story-card,
 .detail-card,
-.rsvp-form {
+.rsvp-form,
+.gift-option,
+.message-form {
   backdrop-filter: blur(2px);
 }
 
@@ -468,7 +473,47 @@ h1 {
   padding: 2rem;
 }
 
-.rsvp-form label {
+.gift-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto 1.2rem;
+}
+
+.gift-option {
+  padding: 2rem;
+}
+
+.gift-option.accent {
+  background: linear-gradient(135deg, #f7e2d9 0%, #fff 100%);
+}
+
+.gift-label {
+  margin: 0 0 0.5rem;
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gift-option h3 {
+  margin-top: 0;
+}
+
+.gift-option p:not(.gift-label) {
+  margin: 0.45rem 0;
+}
+
+.message-form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.rsvp-form label,
+.message-form label {
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
@@ -477,12 +522,20 @@ h1 {
 }
 
 .rsvp-form input,
-.rsvp-form select {
+.rsvp-form select,
+.message-form input,
+.message-form select,
+.message-form textarea {
   padding: 0.9rem 1rem;
   border-radius: 12px;
   border: 1px solid var(--border);
   font: inherit;
   background: #fff;
+}
+
+.message-form textarea {
+  resize: vertical;
+  min-height: 8rem;
 }
 
 .form-message {
@@ -561,6 +614,7 @@ h1 {
   .story-grid,
   .details-grid,
   .gallery-grid,
+  .gift-options,
   .countdown {
     grid-template-columns: 1fr;
   }
@@ -581,7 +635,9 @@ h1 {
   .countdown-card,
   .story-card,
   .detail-card,
-  .rsvp-form {
+  .rsvp-form,
+  .gift-option,
+  .message-form {
     padding: 1.3rem;
   }
 }
