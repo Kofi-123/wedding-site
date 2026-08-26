@@ -386,6 +386,34 @@ h1 {
   overflow: hidden;
 }
 
+.venue-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgba(141, 77, 69, 0.42);
+  border-radius: 10px;
+  color: var(--accent-dark);
+  background: rgba(247, 236, 231, 0.7);
+  font-weight: 700;
+  box-shadow: 0 5px 14px rgba(141, 77, 69, 0.1);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.venue-link::after {
+  content: ">";
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.venue-link:hover,
+.venue-link:focus-visible {
+  border-color: var(--accent-dark);
+  background: #f7e2d9;
+  box-shadow: 0 8px 18px rgba(141, 77, 69, 0.18);
+  transform: translateY(-2px);
+}
+
 .story-card::before,
 .detail-card::before {
   content: "";
